@@ -10,7 +10,11 @@ import DayListItem from "components/DayListItem";
 import DayList from "components/DayList";
 import InterviewerListItem from "components/InterviewerListItem";
 import InterviewerList from "components/InterviewerList";
+import Appointment from "components/Appointment/index";
+import Header from "components/Appointment/Header";
+import Empty from "components/Appointment/Empty";
 
+// Button -----------------------------------------------------------------------------
 storiesOf("Button", module)
   .addParameters({
     backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
@@ -26,6 +30,8 @@ storiesOf("Button", module)
       Disabled
     </Button>
   ));
+
+  // DayListItem ----------------------------------------------------------------------
 storiesOf("DayListItem", module)
   .addParameters({
     backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
@@ -36,6 +42,8 @@ storiesOf("DayListItem", module)
   .add("Clickable", () => (
     <DayListItem name="Tuesday" setDay={action("setDay")} spots={5} />
   ));
+
+  // DayList --------------------------------------------------------------------------
 const days = [
   {
     id: 1,
@@ -70,6 +78,7 @@ const interviewer = {
   avatar: "https://i.imgur.com/LpaY82x.png"
 };
 
+// InterviewerListItem --------------------------------------------------------------
 storiesOf("InterviewerListItem", module)
   .addParameters({
     backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
@@ -98,28 +107,41 @@ storiesOf("InterviewerListItem", module)
     />
   ));
 
-  const interviewers = [
-    { id: 1, name: "Sylvia Palmer", avatar: "https://i.imgur.com/LpaY82x.png" },
-    { id: 2, name: "Tori Malcolm", avatar: "https://i.imgur.com/Nmx0Qxo.png" },
-    { id: 3, name: "Mildred Nazir", avatar: "https://i.imgur.com/T2WwVfS.png" },
-    { id: 4, name: "Cohana Roy", avatar: "https://i.imgur.com/FK8V841.jpg" },
-    { id: 5, name: "Sven Jones", avatar: "https://i.imgur.com/twYrpay.jpg" }
-  ];
-  
-  storiesOf("InterviewerList", module)
-    .addParameters({
-      backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
-    })
-    .add("Initial", () => (
-      <InterviewerList
-        interviewers={interviewers}
-        setInterviewer={action("setInterviewer")}
-      />
-    ))
-    .add("Preselected", () => (
-      <InterviewerList
-        interviewers={interviewers}
-        interviewer={3}
-        setInterviewer={action("setInterviewer")}
-      />
-    ));
+// InterviewerList -----------------------------------------------------------------
+const interviewers = [
+  { id: 1, name: "Sylvia Palmer", avatar: "https://i.imgur.com/LpaY82x.png" },
+  { id: 2, name: "Tori Malcolm", avatar: "https://i.imgur.com/Nmx0Qxo.png" },
+  { id: 3, name: "Mildred Nazir", avatar: "https://i.imgur.com/T2WwVfS.png" },
+  { id: 4, name: "Cohana Roy", avatar: "https://i.imgur.com/FK8V841.jpg" },
+  { id: 5, name: "Sven Jones", avatar: "https://i.imgur.com/twYrpay.jpg" }
+];
+
+storiesOf("InterviewerList", module)
+  .addParameters({
+    backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
+  })
+  .add("Initial", () => (
+    <InterviewerList
+      interviewers={interviewers}
+      setInterviewer={action("setInterviewer")}
+    />
+  ))
+  .add("Preselected", () => (
+    <InterviewerList
+      interviewers={interviewers}
+      interviewer={3}
+      setInterviewer={action("setInterviewer")}
+    />
+  ));
+
+// Appointment -------------------------------------------------------------------
+storiesOf("Appointment", module)
+  .addParameters({
+    backgrounds: [{ name: "white", value: "#fff", default: true }]
+  })
+  .add("Appointment", () => <Appointment />)
+  .add("Appointment with Time", () => <Appointment time="12pm" />)
+  //header ---------
+  .add("Header", () => <Header time="12pm" />)
+  //empty ---------
+  .add("Empty", () => <Empty onAdd={action("onAdd")} />);
