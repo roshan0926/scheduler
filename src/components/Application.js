@@ -31,7 +31,6 @@ export default function Application(props) {
       />
     );
   });
-//-------------------- promise all
 
   return (
     <main className="layout">
@@ -53,7 +52,7 @@ export default function Application(props) {
       </section>
       <section className="schedule">
         {appointmentList}
-        <Appointment key="last" time="5pm" />
+        <Appointment key="last" time="5pm" /> 
       </section>
     </main>
   );

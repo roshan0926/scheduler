@@ -79,5 +79,11 @@ export default {
         data: fixtures.interviewers
       });
     }
+  }),
+  delete: jest.fn(url => {
+    return Promise.resolve({true: true})
+  }),
+  put: jest.fn(url => {
+    return Promise.resolve({true: true})
   })
 };

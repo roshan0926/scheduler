@@ -19,17 +19,16 @@ describe('Form', () => {
     const { getByPlaceholderText } = render(
       <Form interviewers={interviewers} />
     );
-    expect(getByPlaceholderText('Enter Student Name')).toHaveValue(''); // One way to access student name input
+    expect(getByPlaceholderText('Enter Student Name')).toHaveValue('');
   });
 
   it('renders with initial student name', () => {
     const { getByTestId } = render(
       <Form interviewers={interviewers} name="Lydia Miller-Jones" />
     );
-    expect(getByTestId('student-name-input')).toHaveValue('Lydia Miller-Jones'); // Another way to access student name input
+    expect(getByTestId('student-name-input')).toHaveValue('Lydia Miller-Jones');
   });
 
-  //-------------------------------------------------------------------
   it('validates that the student name is not blank', () => {
     const onSave = jest.fn();
     const { getByText } = render(
