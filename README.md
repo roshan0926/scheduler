@@ -41,3 +41,8 @@ npm run cypress
 - Interviews can also be edited by hovering your mouse over the appointment and clicking on the edic icon on the bottom right. You have the option to change the student name as well as the interviewer.
 - To cancel an interview the trash button appears while hovering over a specific schedualed interview. When press a confirmation message will appear.
 
+![appointment-form](https://github.com/roshan0926/scheduler/blob/master/docs/appointment-form.png?raw=true)
+
+![creating-an-appointment.png](https://github.com/roshan0926/scheduler/blob/master/docs/creating-an-appointment.png?raw=true)
+
+![view-of-created-appointment.png](https://github.com/roshan0926/scheduler/blob/master/docs/view-of-created-appointment.png?raw=true)
