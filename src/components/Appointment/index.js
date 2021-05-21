@@ -71,7 +71,7 @@ export default function Appointment(props) {
           interviewers={props.interviewers}
           interviewer={props.interview && props.interview.interviewer.id}
           onSave={save}
-          onCancel={() => transition(EMPTY)} //ensures it transitions back to being empty rather than the error page
+          onCancel={() => back()} 
         />
       )}
       {mode === SAVING && <Status message="Saving" />}
