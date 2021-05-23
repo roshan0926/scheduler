@@ -29,10 +29,10 @@ npm run cypress
 ```
 
 ### About the project 
-- Schedular runs in sync with scheduler-api which can be found in my repositories. It is a single page web app designed to allow students to schedule an interview with an interviewer of their choice in designated time slots thoughout the week.
+- Scheduler runs in sync with scheduler-api which can be found in my repositories. It is a single-page web app designed to allow students to schedule an interview with an interviewer of their choice in designated time slots throughout the week.
 - Students can Create, Edit, and Delete interviews.
-- It was designed using react 
-- It incoportaes axios, storybook visual testbed, jest test framework as well as cypress testing.
+- It was designed using react
+- It incorporates axios, storybook visual testbed, jest test framework as well as cypress testing.
 
 ### Using the web app 
 - Interviews can be made by pressing on the plus buttons for that day.
